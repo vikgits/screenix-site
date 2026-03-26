@@ -61,11 +61,15 @@ body{
 }
 
 .container {
+	display:flex;
   max-width: 1100px;
   margin: 0 auto;
   padding: 0 15px; /* smaller padding for mobile */
   width: 100%;      /* ensure it never exceeds viewport */
   box-sizing: border-box; /* include padding in width */
+  align-items:center;
+  justify-content:space-between;
+  
 }
 
 
@@ -239,9 +243,33 @@ footer{
 html {
   scroll-behavior: smooth;
 }
-
-
 </style>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Screenix",
+  "image": "https://screenix.ca/images/logo.png",
+  "url": "https://screenix.ca",
+  "telephone": "+1604XXXXXXX",
+  "email": "hello@screenix.ca",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Surrey",
+    "addressRegion": "BC",
+    "addressCountry": "CA"
+  },
+  "description": "Reliable custom window and patio screen repair and installation in Surrey and Lower Mainland. Fast turnaround, quality mesh options.",
+  "openingHours": "Mo-Fr 09:00-18:00",
+  "priceRange": "$$",
+  "sameAs": [
+    "https://www.facebook.com/yourpage",
+    "https://www.instagram.com/yourprofile"
+  ]
+}
+</script>
+
 </head>
 
 <body>
