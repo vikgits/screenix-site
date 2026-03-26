@@ -329,7 +329,17 @@ footer{
   text-align:center;
 }
 
-
+/* MOBILE */
+@media(max-width:768px){
+  h1{font-size:2.2rem;}
+  
+  header nav {
+    flex-direction: column; /* optional: stack vertically for very small screens */
+  }
+  .grid-3 {
+    grid-template-columns: 1fr; /* stack cards vertically */
+  }
+}
 
 .section {
   scroll-margin-top: 80px;
@@ -350,31 +360,10 @@ html {
   cursor: pointer;
 }
 
-@media (max-width: 768px) {
+@media (max-width:768px){
   .hamburger {
-    display: block; /* show hamburger only on mobile */
+    display: block;
   }
-
-  header nav {
-    display: none; /* hide links initially */
-    flex-direction: column;
-    gap: 15px;
-    background: white;
-    position: absolute;
-    top: 60px; /* space below header */
-    right: 15px;
-    padding: 10px;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    width: 200px;
-    z-index: 20; /* ensure nav is above other content */
-  }
-
-  header nav.show {
-    display: flex; /* show nav when hamburger clicked */
-  }
-}
-
 
 
 </style>
@@ -410,10 +399,10 @@ html {
 
 
 <header>
-  <div class="container">
+  <div class="container nav">
     <img src="logo/Screenix_logo_short.png" style="width:240px;height:auto;">
     <button class="hamburger">&#9776;</button> <!-- hamburger icon -->
-    <nav class="nav-links">
+    <nav>
       <a href="#services">Services</a>
       <a href="#gallery">Gallery</a>
       <a href="#pricing">Pricing</a>
@@ -421,8 +410,6 @@ html {
     </nav>
   </div>
 </header>
-
-
 
 
 <!--<header>
@@ -875,13 +862,12 @@ document.getElementById("contactForm").addEventListener("submit", async function
 
 <script>
 const hamburger = document.querySelector('.hamburger');
-const nav = document.querySelector('.nav-links');
+const nav = document.querySelector('header nav');
 
 hamburger.addEventListener('click', () => {
   nav.classList.toggle('show');
 });
 </script>
-
 
 
 </body>
