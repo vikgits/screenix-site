@@ -60,6 +60,116 @@ body{
   line-height:1.6;
 }
 
+
+
+/* Header container */
+header {
+  background: white;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0;
+}
+
+/* Desktop nav links */
+header nav {
+  display: flex; /* visible on desktop */
+  gap: 20px;
+}
+
+/* Nav links style */
+header nav a {
+  text-decoration: none;
+  color: var(--primary);
+  margin-left: 0; /* spacing handled by flex gap */
+}
+
+/* Hamburger button - hidden on desktop */
+.hamburger {
+  display: none;
+  font-size: 28px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  /* Show hamburger */
+  .hamburger {
+    display: block;
+  }
+
+  /* Hide nav by default on mobile */
+  header nav {
+    display: none;
+    flex-direction: column;
+    gap: 15px;
+    background: white;
+    position: absolute;
+    top: 60px; /* space below header */
+    right: 15px;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 200px;
+  }
+
+  /* Show nav when active */
+  header nav.show {
+    display: flex;
+  }
+}
+
+
+
+
+
+
+
+
+
+.hamburger {
+  display: none; /* hidden on desktop */
+  font-size: 28px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Mobile styles */
+@media (max-width:768px){
+  .hamburger {
+    display: block; /* show hamburger only on mobile */
+  }
+
+  header nav {
+    display: none; /* hide links initially on mobile */
+    flex-direction: column;
+    gap: 15px;
+    background: white;
+    position: absolute;
+    top: 70px;
+    right: 15px;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  }
+
+  header nav.show {
+    display: flex; /* shown when hamburger clicked */
+  }
+}
+
+
+
 .container {
   max-width: 1100px;
   margin: 0 auto;
@@ -78,18 +188,8 @@ header{
   border-bottom:1px solid #e5e7eb;
 }
 
-header .container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 0;
-}
 
-header nav {
-  display: flex;
-  flex-wrap: wrap;   /* allows wrapping if needed */
-  gap: 15px;         /* spacing between links */
-}
+
 
 
 .nav{
@@ -187,13 +287,9 @@ h3{color:var(--dark);}
   gap: 16px;
 }
 
-@media(max-width: 768px) {
-header nav {
-    flex-direction: column; /* optional: stack vertically for very small screens */
-  }
-  .grid-3 {
-    grid-template-columns: 1fr; /* stack cards vertically */
-  }
+.nav-links {
+  display: flex;
+  gap: 20px;
 }
 
 .grid-2 {
@@ -247,6 +343,13 @@ footer{
 /* MOBILE */
 @media(max-width:768px){
   h1{font-size:2.2rem;}
+  
+  header nav {
+    flex-direction: column; /* optional: stack vertically for very small screens */
+  }
+  .grid-3 {
+    grid-template-columns: 1fr; /* stack cards vertically */
+  }
 }
 
 .section {
@@ -256,6 +359,9 @@ footer{
 html {
   scroll-behavior: smooth;
 }
+
+
+
 
 
 </style>
@@ -293,11 +399,8 @@ html {
 <header>
   <div class="container nav">
     <img src="logo/Screenix_logo_short.png" style="width:240px;height:auto;">
-    
-    <!-- Hamburger button for mobile -->
-    <button class="hamburger" aria-label="Menu">&#9776;</button>
-
-    <nav class="nav-links">
+    <button class="hamburger">&#9776;</button> <!-- hamburger icon -->
+    <nav>
       <a href="#services">Services</a>
       <a href="#gallery">Gallery</a>
       <a href="#pricing">Pricing</a>
