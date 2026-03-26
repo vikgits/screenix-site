@@ -341,28 +341,23 @@ footer{
 }
 
 /* MOBILE */
-@media (max-width: 768px) {
+@media(max-width:768px){
+  h1{font-size:2.2rem;}
+  
   header nav {
-    display: none;
-    flex-direction: column;
-    gap: 15px;
-    background: white;
-    position: absolute;
-    top: 60px;
-    right: 15px;
-    padding: 10px;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    width: 200px;
+    flex-direction: column; /* optional: stack vertically for very small screens */
   }
+  .grid-3 {
+    grid-template-columns: 1fr; /* stack cards vertically */
+  }
+}
 
-  header nav.show {
-    display: flex;
-  }
+.section {
+  scroll-margin-top: 80px;
+}
 
-  .hamburger {
-    display: block;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 
@@ -411,23 +406,19 @@ hamburger.addEventListener('click', () => {
 <body>
 
 
-
 <header>
-  <div class="container">
+  <div class="container nav">
     <img src="logo/Screenix_logo_short.png" style="width:240px;height:auto;">
-
-    <!-- Hamburger for mobile -->
-    <button class="hamburger">&#9776;</button>
-
-    <!-- Navigation links -->
+    <button class="hamburger">&#9776;</button> <!-- hamburger icon -->
     <nav>
-      <a href="#home">Home</a>
       <a href="#services">Services</a>
+      <a href="#gallery">Gallery</a>
       <a href="#pricing">Pricing</a>
       <a href="#contact">Contact</a>
     </nav>
   </div>
 </header>
+
 
 
 
