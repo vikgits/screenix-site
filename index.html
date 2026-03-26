@@ -188,9 +188,25 @@ header{
   border-bottom:1px solid #e5e7eb;
 }
 
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0;
+}
 
-
-
+header nav {
+    display: none; /* hide links initially on mobile */
+    flex-direction: column;
+    gap: 15px;
+    background: white;
+    position: absolute;
+    top: 60px;
+    right: 15px;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  }
 
 .nav{
   display:flex;
