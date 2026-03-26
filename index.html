@@ -78,18 +78,7 @@ header .container {
   padding: 15px 0;
 }
 
-/* Desktop nav links */
-header nav {
-  display: flex; /* visible on desktop */
-  gap: 20px;
-}
 
-/* Nav links style */
-header nav a {
-  text-decoration: none;
-  color: var(--primary);
-  margin-left: 0; /* spacing handled by flex gap */
-}
 
 /* Hamburger button - hidden on desktop */
 .hamburger {
@@ -100,35 +89,18 @@ header nav a {
   cursor: pointer;
 }
 
-
-
-  /* Hide nav by default on mobile */
-  header nav {
-    display: none;
-    flex-direction: column;
-    gap: 15px;
-    background: white;
-    position: absolute;
-    top: 60px; /* space below header */
-    right: 15px;
-    padding: 10px;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    width: 200px;
+/* Mobile only */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
   }
 
-  /* Show nav when active */
+ 
+
   header nav.show {
     display: flex;
   }
 }
-
-
-
-
-
-
-
 
 
 .hamburger {
@@ -139,7 +111,18 @@ header nav a {
   cursor: pointer;
 }
 
+/* Mobile styles */
+@media (max-width:768px){
+  .hamburger {
+    display: block; /* show hamburger only on mobile */
+  }
 
+
+
+  header nav.show {
+    display: flex; /* shown when hamburger clicked */
+  }
+}
 
 
 
@@ -364,6 +347,15 @@ html {
   .hamburger {
     display: block;
   }
+}
+
+@media (min-width: 769px) {
+  header nav {
+    display: flex;
+    position: static;
+    flex-direction: row;
+  }
+}
 
 
 </style>
