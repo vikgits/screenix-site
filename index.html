@@ -85,6 +85,12 @@ header .container {
   padding: 15px 0;
 }
 
+header nav {
+  display: flex;
+  flex-wrap: wrap;   /* allows wrapping if needed */
+  gap: 15px;         /* spacing between links */
+}
+
 
 .nav{
   display:flex;
@@ -182,6 +188,9 @@ h3{color:var(--dark);}
 }
 
 @media(max-width: 768px) {
+header nav {
+    flex-direction: column; /* optional: stack vertically for very small screens */
+  }
   .grid-3 {
     grid-template-columns: 1fr; /* stack cards vertically */
   }
